@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de commande | OpticShop241</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+<body>
+    <!-- Barre de navigation identique -->
+    <nav aria-label="Navigation principale">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <span>Optic</span><strong>Shop241</strong>
+        </a>
+        <button class="burger" aria-expanded="false" aria-label="Menu mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="favoris.html" class="icon-link" aria-label="Favoris">
+                    ❤️ <span class="counter" id="fav-counter">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="panier.html" class="icon-link" aria-label="Panier">
+                    🛒 <span class="counter" id="cart-counter">0</span>
+                </a>
+            </li>
+            <li><a href="login.html" class="icon-link" aria-label="Mon compte">👤</a></li>
+        </ul>
+    </nav>
+
+    <main class="confirmation-page">
+        <div class="confirmation-container">
+            <!-- En-tête de confirmation -->
+            <div class="confirmation-header">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Merci pour votre commande !</h1>
+                <p class="order-number">Votre numéro de commande : <strong>#CMD-<span id="order-id">...</span></strong></p>
+                <p>Un email de confirmation vous a été envoyé à <span id="customer-email">...</span></p>
+            </div>
+
+            <!-- Résumé de la commande -->
+            <div class="order-details">
+                <h2>Récapitulatif de votre commande</h2>
+                
+                <div class="details-grid">
+                    <div class="details-column">
+                        <h3>Informations de livraison</h3>
+                        <div id="shipping-details">
+                            <!-- Généré dynamiquement -->
+                        </div>
+                    </div>
+                    
+                    <div class="details-column">
+                        <h3>Méthode de paiement</h3>
+                        <div id="payment-details">
+                            <!-- Généré dynamiquement -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-items">
+                    <h3>Articles commandés</h3>
+                    <div class="items-list" id="order-items">
+                        <!-- Généré dynamiquement -->
+                    </div>
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Sous-total</span>
+                        <span id="confirm-subtotal">0 FCFA</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Livraison</span>
+                        <span id="confirm-shipping">0 FCFA</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Total</span>
+                        <span id="confirm-total">0 FCFA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Suivi de commande -->
+            <div class="order-tracking">
+                <h2>Suivi de votre commande</h2>
+                <div class="tracking-steps">
+                    <div class="tracking-step active">
+                        <div class="step-icon">1</div>
+                        <div class="step-info">
+                            <strong>Commande confirmée</strong>
+                            <span>Aujourd'hui à <span id="order-time">...</span></span>
+                        </div>
+                    </div>
+                    <div class="tracking-step">
+                        <div class="step-icon">2</div>
+                        <div class="step-info">
+                            <strong>En préparation</strong>
+                            <span>D'ici 24 heures</span>
+                        </div>
+                    </div>
+                    <div class="tracking-step">
+                        <div class="step-icon">3</div>
+                        <div class="step-info">
+                            <strong>Expédiée</strong>
+                            <span>Suivi disponible</span>
+                        </div>
+                    </div>
+                    <div class="tracking-step">
+                        <div class="step-icon">4</div>
+                        <div class="step-info">
+                            <strong>Livrée</strong>
+                            <span>Date estimée : <span id="delivery-date">...</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Actions supplémentaires -->
+            <div class="confirmation-actions">
+                <a href="catalogue.html" class="btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Continuer vos achats
+                </a>
+                <a href="#" class="btn-outline" id="print-invoice">
+                    <i class="fas fa-print"></i> Imprimer la facture
+                </a>
+                <a href="contact.html" class="btn-outline">
+                    <i class="fas fa-question-circle"></i> Aide & Contact
+                </a>
+            </div>
+            
+            <!-- Conseils et informations -->
+            <div class="order-info">
+                <div class="info-card">
+                    <i class="fas fa-box-open"></i>
+                    <h4>Emballage sécurisé</h4>
+                    <p>Vos lunettes sont protégées dans un étui rigide pour arriver en parfait état.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-undo"></i>
+                    <h4>Retours faciles</h4>
+                    <p>Vous avez 14 jours pour changer d'avis. <a href="#">En savoir plus</a></p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Garantie 2 ans</h4>
+                    <p>Tous nos produits bénéficient de notre garantie constructeur.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | OpticShop241</title>
+    <meta name="description" content="Découvrez l'histoire et les valeurs d'OpticShop241, votre opticien de confiance au Gabon. Qualité, innovation et engagement depuis 2015.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/a-propos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+    <!-- Navbar (identique à index.html) -->
+    <nav aria-label="Navigation principale">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <span>Optic</span><strong>Shop241</strong>
+        </a>
+        <button class="burger" aria-expanded="false" aria-label="Menu mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" aria-current="page">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="favoris.html" class="icon-link" aria-label="Favoris">
+                    ❤️ <span class="counter" id="fav-counter">0</span>
+                </a>
+            </li>
+            
+            <li><a href="login.html" class="icon-link" aria-label="Mon compte">👤</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section principale -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text animate fadeInUp">
+                <h1>Notre histoire</h1>
+                <p>Depuis 2015, <strong>OpticShop241</strong> s'engage à offrir des lunettes de vue et solaires haut de gamme à tous les Gabonais. Nous croyons que chaque regard mérite style, confort et qualité.</p>
+                <p>Basé à Libreville, notre opticien en ligne propose une expérience unique alliant technologie (essai virtuel), conseil personnalisé, et service client irréprochable.</p>
+            </div>
+            <div class="about-img animate fadeInRight">
+                <img src="images/team.PNG" alt="Équipe OpticShop241" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="values-section">
+        <h2 class="animate fadeInUp">Nos valeurs</h2>
+        <div class="values-grid">
+            <div class="value-box animate fadeInLeft">
+                <h3>Qualité</h3>
+                <p>Des matériaux premium et des verres certifiés pour garantir votre confort visuel.</p>
+            </div>
+            <div class="value-box animate fadeInUp">
+                <h3>Accessibilité</h3>
+                <p>Des prix compétitifs et une livraison rapide partout au Gabon.</p>
+            </div>
+            <div class="value-box animate fadeInRight">
+                <h3>Engagement</h3>
+                <p>Un service client à l’écoute et une politique "satisfait ou remboursé".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (identique à index.html) -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>OpticShop241</h3>
+                <p>Votre opticarien de confiance depuis 2015</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <address>
+                    <p>Libreville, Gabon</p>
+                    <p>Email: contact@opticshop241.com</p>
+                    <p>Tél: +241 77 23 23 23</p>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Livraison express</a></li>
+                    <li><a href="#">Essai virtuel</a></li>
+                    <li><a href="#">Conseils experts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 OpticShop241 - Tous droits réservés</p>
+        </div>
+    </footer>
+    <script>
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        burger.addEventListener('click', () => {
+            const isOpen = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !isOpen);
+            navMenu.classList.toggle('open');
+        });
+    </script>
+
+    <script>
+        // Simple animation au scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

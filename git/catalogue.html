@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catalogue complet des lunettes OpticShop241 - Lunettes de vue, solaires, hommes, femmes et enfants. Livraison rapide au Gabon.">
+    <title>Catalogue Lunettes | OpticShop241</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalogue.css">
+    <link rel="preload" href="js/filters.js" as="script">
+    <link rel="preload" href="js/utilities.js" as="script">
+</head>
+<body>
+    <!-- Même navbar que index.html -->
+    <nav aria-label="Navigation principale">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <span>Optic</span><strong>Shop241</strong>
+        </a>
+        <button class="burger" aria-expanded="false" aria-label="Menu mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" aria-current="page">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="favoris.html" class="icon-link" aria-label="Favoris">
+                    ❤️ <span class="counter" id="fav-counter">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="panier.html" class="icon-link" aria-label="Panier">
+                    🛒 <span class="counter" id="cart-counter">0</span>
+                </a>
+            </li>
+            <li><a href="login.html" class="icon-link" aria-label="Mon compte">👤</a></li>
+        </ul>
+    </nav>
+
+    <main class="catalogue-container">
+        <h1>Notre catalogue de lunettes</h1>
+        
+        <!-- Filtres -->
+        <aside class="filters-section" aria-label="Filtres des produits">
+            <div class="filter-group">
+                <h2>Catégories</h2>
+                <ul class="category-list">
+                    <li><button data-category="all" class="active">Tous</button></li>
+                    <li><button data-category="solaires">Solaires</button></li>
+                    <li><button data-category="vue">De vue</button></li>
+                    <li><button data-category="homme">Hommes</button></li>
+                    <li><button data-category="femme">Femmes</button></li>
+                    <li><button data-category="enfant">Enfants</button></li>
+                </ul>
+            </div>
+            
+            <div class="filter-group">
+                <h2>Prix (FCFA)</h2>
+                <div class="price-range">
+                    <input type="range" id="price-filter" min="5000" max="100000" step="5000" value="100000">
+                    <div class="price-values">
+                        <span>5 000</span>
+                        <span id="current-price">100 000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h2>Couleurs</h2>
+                <div class="color-filters">
+                    <button data-color="noir" aria-label="Filtrer par couleur noir">⬛</button>
+                    <button data-color="rouge" aria-label="Filtrer par couleur rouge">🟥</button>
+                    <button data-color="bleu" aria-label="Filtrer par couleur bleu">🟦</button>
+                    <button data-color="transparent" aria-label="Filtrer par couleur transparent">⬜</button>
+                </div>
+            </div>
+            
+            <button id="reset-filters" class="reset-btn">Réinitialiser</button>
+        </aside>
+
+        <!-- Liste des produits -->
+        <section class="products-section" aria-label="Liste des produits">
+            <div class="sort-options">
+                <label for="sort-by">Trier par :</label>
+                <select id="sort-by">
+                    <option value="default">Par défaut</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                    <option value="popularity">Popularité</option>
+                    <option value="newest">Nouveautés</option>
+                </select>
+                <span id="product-count">12 produits</span>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Produits chargés dynamiquement -->
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+            </div>
+            
+            <div class="pagination">
+                <button id="prev-page" disabled>Précédent</button>
+                <span id="page-indicator">Page 1/3</span>
+                <button id="next-page">Suivant</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Même footer que index.html -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>OpticShop241</h3>
+                <p>Votre opticarien de confiance depuis 2015</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <address>
+                    <p>Libreville, Gabon</p>
+                    <p>Email: contact@opticshop241.com</p>
+                    <p>Tél: +241 77 23 23 23</p>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Livraison express</a></li>
+                    <li><a href="#">Essai virtuel</a></li>
+                    <li><a href="#">Conseils experts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 OpticShop241 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/filters.js" defer></script>
+    <script src="js/catalogue.js" defer></script>
+    <script src="js/utilities.js"></script>
+</body>
+</html>

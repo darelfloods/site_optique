@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier | OpticShop241</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <!-- Barre de navigation identique -->
+    <!-- Navbar -->
+    <nav aria-label="Navigation principale">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <span>Optic</span><strong>Shop241</strong>
+        </a>
+        <button class="burger" aria-expanded="false" aria-label="Menu mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" aria-current="page">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="favoris.html" class="icon-link" aria-label="Favoris">
+                    ❤️ <span class="counter" id="fav-counter">0</span>
+                </a>
+            </li>
+            
+            <li><a href="login.html" class="icon-link" aria-label="Mon compte">👤</a></li>
+        </ul>
+    </nav>
+
+    <main class="cart-page">
+        <h1>Votre Panier</h1>
+        
+        <div class="cart-container">
+            <!-- Liste des produits -->
+            <div class="cart-items" id="cart-items">
+                <!-- Généré dynamiquement -->
+                <div class="empty-cart">
+                    <p>Votre panier est vide</p>
+                    <a href="catalogue.html" class="btn-primary">Découvrir nos produits</a>
+                </div>
+            </div>
+            
+            <!-- Récapitulatif -->
+            <div class="cart-summary">
+                <h2>Récapitulatif</h2>
+                
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Sous-total</span>
+                        <span id="subtotal">0 FCFA</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Livraison</span>
+                        <span id="shipping">Gratuite</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">0 FCFA</span>
+                    </div>
+                </div>
+                
+                <button id="checkout-btn" class="btn-primary" disabled>Passer la commande</button>
+                
+                <div class="payment-methods">
+                    <img src="images/method.jpeg" alt="Moyens de paiement acceptés" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        burger.addEventListener('click', () => {
+            const isOpen = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !isOpen);
+            navMenu.classList.toggle('open');
+        });
+    </script>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

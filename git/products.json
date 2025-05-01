@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "name": "Lunettes solaires GEB",
+        "price": 26000,
+        "category": ["solaires", "homme"],
+        "colors": ["noir", "bleu"],
+        "image": "images/LunetSolaire.jpeg",
+        "images": [
+            "images/LunetSolaire1.jpeg",
+            "images/LunetSolaire2.jpeg"
+        ],
+        "rating": 4.8,
+        "reviews": 24,
+        "stock": 15,
+        "description": "Lunettes solaires polarisées avec monture légère en acétate",
+        "details": {
+            "material": "Acétate",
+            "lensType": "Polarisées",
+            "uvProtection": "UV400",
+            "weight": "28g",
+            "dimensions": "145-50-18 mm"
+        },
+        "dateAdded": "2024-05-15",
+        "isNew": true,
+        "isBestSeller": true
+    },
+    {
+        "id": 2,
+        "name": "Monture FLORA",
+        "price": 45000,
+        "category": ["vue", "femme"],
+        "colors": ["transparent", "rose"],
+        "image": "images/flora.jpeg",
+        "images": [
+            "images/flora1.jpeg",
+            "images/flora2.jpeg"
+        ],
+        
+        "rating": 4.9,
+        "reviews": 37,
+        "stock": 8,
+        "description": "Monture élégante en acétate transparent pour femme",
+        "details": {
+            "material": "Acétate",
+            "lensType": "À personnaliser",
+            "weight": "22g",
+            "dimensions": "140-48-16 mm"
+        },
+        "dateAdded": "2024-03-10",
+        "isNew": false,
+        "isBestSeller": true
+    },
+    {
+        "id": 3,
+        "name": "Lunettes BANNISTER",
+        "price": 13000,
+        "category": ["enfant", "solaires"],
+        "colors": ["rouge", "bleu"],
+        "image": "images/bannister.jpeg",
+        "images": [
+            "images/bannister1.jpeg",
+            "images/bannister2.jpeg"
+        ],
+        "rating": 4.5,
+        "reviews": 12,
+        "stock": 20,
+        "description": "Lunettes solaires pour enfants, résistantes et légères",
+        "details": {
+            "material": "Plastique flexible",
+            "lensType": "Polarisées",
+            "uvProtection": "UV400",
+            "weight": "18g"
+        },
+        "dateAdded": "2024-06-01",
+        "isNew": true,
+        "isBestSeller": false
+    }
+]
