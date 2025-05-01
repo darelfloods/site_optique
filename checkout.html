@@ -8,8 +8,43 @@
     <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH63WG5MZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BH63WG5MZ1');
+</script>
     <!-- Barre de navigation identique -->
-    <nav>...</nav>
+    <nav aria-label="Navigation principale">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <span>Optic</span><strong>Shop241</strong>
+        </a>
+        <button class="burger" aria-expanded="false" aria-label="Menu mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" aria-current="page">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="favoris.html" class="icon-link" aria-label="Favoris">
+                    ❤️ <span class="counter" id="fav-counter">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="panier.html" class="icon-link" aria-label="Panier">
+                    🛒 <span class="counter" id="cart-counter">0</span>
+                </a>
+            </li>
+            <li><a href="login.html" class="icon-link" aria-label="Mon compte">👤</a></li>
+        </ul>
+    </nav>
 
     <main class="checkout-page">
         <div class="checkout-container">
@@ -206,6 +241,17 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        burger.addEventListener('click', () => {
+            const isOpen = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !isOpen);
+            navMenu.classList.toggle('open');
+        });
+    </script>
 
     <script src="js/checkout.js"></script>
 </body>
